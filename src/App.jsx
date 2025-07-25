@@ -27,7 +27,7 @@ import './App.css'
 // Resume data
 const resumeData = {
   "name": "Muhammad Amjad",
-  "title": "Data Scientist | ML Engineer | AI Engineer | BI Specialist",
+  "title": "AI Engineer | ML Engineer | Data Scientist ",
   "contact": {
     "phone": "+92-3203978434",
     "email": "mamjad15153@gmail.com"
@@ -66,19 +66,23 @@ const resumeData = {
       "description": "This project involves manipulating and visualizing Netflix movie data to uncover trends, patterns, and preferences among viewers, enhancing understanding of movie consumption habits."
     },
     {
-      "title": "Iris Flower Classification",
-      "tech": "Python",
-      "description": "Using machine learning, this project classifies iris flowers into species based on sepal and petal measurements, demonstrating a fundamental classification problem with a well-known dataset."
-    },
-    {
       "title": "AI Robot with Arduino and Python",
       "tech": "Python/Arduino",
       "description": "Integrating Arduino and Python, this project develops an AI-driven robot using digital logic principles, focusing on building a functional autonomous system."
     },
     {
+      "title":"Traveling Salesman Problem ",
+      "tech":"Python",
+      "description":"Used a heuristic KNN approach to solve TSP, generating efficient routes through proximity-based pathfinding and comparing results with brute-force and greedy methods."
+    },
+    {
       "title": "Ticket Booth Management System",
       "tech": "C++",
       "description": "Implemented in C++, this system manages ticket sales, seat reservations, and customer transactions, providing efficient management for ticketing operations."
+    },
+    {"title": "Cardiovascular Research Knowledge Base RAG Chatbot",
+      "tech":"Python",
+      "description":"Built a chatbot for cardiovascular research using Pinecone, E5 embeddings, and Groq LLM. Enables fast, accurate querying of medical literature via Retrieval-Augmented Generation."
     },
     {
       "title": "Snake Game with GUI",
@@ -88,8 +92,8 @@ const resumeData = {
   ],
   "skills": {
     "programming": ["C++", "Python"],
-    "data_ml": ["Machine Learning", "Data Science", "Data Visualization", "Data Analysis", "Business Analytics", "Business Intelligence"],
-    "tools": ["MS Office"],
+    "data_ml": ["Machine Learning","NLP","CV","AI Agents","Data Science", "Data Visualization", "Data Analysis"],
+    "tools": ["MS Office","VsCode","PyCharm"],
     "soft_skills": ["Problem Solving", "Management & Coordination"]
   }
 }
@@ -134,13 +138,13 @@ function App() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Enhanced Animated Background */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-900 opacity-90"></div>
         
         {/* Floating particles */}
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-30"
+            className="absolute w-2 h-2 bg-gradient-to-r from-cyan-400 to-gray-600 rounded-full opacity-30"
             animate={{
               x: [0, Math.random() * 100 - 50],
               y: [0, Math.random() * 100 - 50],
@@ -161,7 +165,7 @@ function App() {
 
         {/* Interactive mouse follower */}
         <motion.div
-          className="absolute w-96 h-96 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+          className="absolute w-96 h-96 bg-gradient-to-r from-cyan-500/20 via-gray-500/20 to-gray-500/20 rounded-full blur-3xl"
           animate={{
             x: mousePosition.x - 200,
             y: mousePosition.y - 200,
@@ -171,87 +175,87 @@ function App() {
         
         {/* Additional background elements */}
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-xl animate-bounce"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-r from-purple-500/10 to-indigo-950/10 rounded-full blur-xl animate-bounce"></div>
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-lg animate-ping"></div>
       </div>
 
-      {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-purple-500/20"
-      >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-            >
-              MA
-            </motion.div>
+{/* Navigation */}
+<motion.nav
+  initial={{ y: -100, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-purple-500/20"
+>
+  <div className="relative w-full flex items-center justify-between px-4 py-4">
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-purple-500/25'
-                      : 'hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 hover:text-cyan-300'
-                  }`}
-                >
-                  <item.icon size={16} />
-                  <span>{item.label}</span>
-                </motion.button>
-              ))}
-            </div>
+    {/* Left Corner: Logo */}
+   <motion.div
+  whileHover={{ scale: 1.05 }}
+  className="absolute top-1/2 left-4 -translate-y-1/2 text-[1.6rem] sm:text-2xl font-extrabold leading-none tracking-tight bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent z-50"
+>
+  MA
+</motion.div>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden text-cyan-400 hover:text-purple-400"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </Button>
-          </div>
+    {/* Centered Desktop Navigation */}
+    <div className="hidden md:flex items-center space-x-8 mx-auto z-10">
+      {navItems.map((item) => (
+        <motion.button
+          key={item.id}
+          onClick={() => scrollToSection(item.id)}
+          whileHover={{ scale: 1.1, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+            activeSection === item.id
+              ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-purple-500/25'
+              : 'hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 hover:text-cyan-300'
+          }`}
+        >
+          <item.icon size={16} />
+          <span>{item.label}</span>
+        </motion.button>
+      ))}
+    </div>
 
-          {/* Mobile Navigation */}
-          <AnimatePresence>
-            {isMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="md:hidden mt-4 space-y-2"
-              >
-                {navItems.map((item) => (
-                  <motion.button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    whileHover={{ x: 10 }}
-                    className={`flex items-center space-x-2 w-full px-3 py-2 rounded-lg transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white'
-                        : 'hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 hover:text-cyan-300'
-                    }`}
-                  >
-                    <item.icon size={16} />
-                    <span>{item.label}</span>
-                  </motion.button>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </motion.nav>
+    {/* Mobile Menu Toggle Button */}
+    <Button
+      variant="ghost"
+      size="icon"
+      className="md:hidden text-cyan-400 hover:text-purple-400 z-10"
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+    >
+      {isMenuOpen ? <X /> : <Menu />}
+    </Button>
+  </div>
 
+  {/* Mobile Navigation */}
+<AnimatePresence>
+  {isMenuOpen && (
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: 'auto' }}
+      exit={{ opacity: 0, height: 0 }}
+      className="md:hidden mt-4 px-4 pb-6 space-y-3 flex flex-col"
+    >
+      {navItems.map((item) => (
+        <motion.button
+          key={item.id}
+          onClick={() => scrollToSection(item.id)}
+          whileHover={{ scale: 1.05, x: 6 }}
+          whileTap={{ scale: 0.95 }}
+          className={`flex items-center space-x-2 px-4 py-2 rounded-md text-left transition-all duration-300 w-full ${
+            activeSection === item.id
+              ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-md'
+              : 'hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 hover:text-cyan-300'
+          }`}
+        >
+          <item.icon size={18} />
+          <span className="text-base font-medium">{item.label}</span>
+        </motion.button>
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
+</motion.nav>
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 pt-20">
         <div className="container mx-auto text-center z-10">
@@ -291,14 +295,14 @@ function App() {
             </div>
           </motion.div>
 
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-          >
-            {resumeData.name}
-          </motion.h1>
+         <motion.h1
+  initial={{ y: 50, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent leading-tight tracking-tight font-sans"
+>
+  {resumeData.name}
+</motion.h1>
 
           <motion.p
             initial={{ y: 50, opacity: 0 }}
@@ -512,9 +516,10 @@ function App() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Featured Projects
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent leading-tight tracking-tight font-sans">
+            Featured Projects
             </h2>
+
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
           </motion.div>
 
@@ -693,20 +698,42 @@ function App() {
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
 
-                <div className="flex space-x-4 pt-4">
-                  <motion.div whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                    <Button size="icon" variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white shadow-lg shadow-cyan-400/25">
-                      <Github size={20} />
-                    </Button>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                    <Button size="icon" variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white shadow-lg shadow-purple-400/25">
-                      <Linkedin size={20} />
-                    </Button>
-                  </motion.div>
-                </div>
-              </motion.div>
+               <div className="flex space-x-4 pt-4">
+  <motion.a
+    href="https://github.com/MuhammadAmjadMehmood"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.1, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <Button
+      size="icon"
+      variant="outline"
+      className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white shadow-lg shadow-cyan-400/25"
+    >
+      <Github size={20} />
+    </Button>
+  </motion.a>
+
+  <motion.a
+    href="https://www.linkedin.com/in/muhammad-amjad-mehmood-869455253/"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.1, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <Button
+      size="icon"
+      variant="outline"
+      className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white shadow-lg shadow-purple-400/25"
+    >
+      <Linkedin size={20} />
+    </Button>
+  </motion.a>
+</div>
+
 
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
@@ -769,4 +796,3 @@ function App() {
 }
 
 export default App
-
