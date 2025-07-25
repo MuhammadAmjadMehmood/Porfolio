@@ -285,13 +285,13 @@ function App() {
   </motion.div>
 
   <motion.h1
-    initial={{ y: 50, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.8, delay: 0.4 }}
-    className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-  >
-    {resumeData.name}
-  </motion.h1>
+  initial={{ y: 50, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="text-5xl md:text-7xl font-bold mb-6 leading-[1.2] tracking-wide bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+>
+  {resumeData.name}
+</motion.h1>
 
   <motion.p
     initial={{ y: 50, opacity: 0 }}
@@ -443,7 +443,10 @@ function App() {
       <section id="projects" className="py-20 px-4 relative z-10">
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-[1.2] tracking-wide bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">Featured Projects
+       
+          </h2>
+
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full" />
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
