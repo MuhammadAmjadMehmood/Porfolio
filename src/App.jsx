@@ -372,7 +372,7 @@ function App() {
               <Card className="p-8 bg-slate-800/50 backdrop-blur-sm border-purple-500/20 shadow-xl shadow-purple-500/10">
                 <CardContent className="space-y-6">
                   <p className="text-lg leading-relaxed text-slate-300">
-                    I'm a passionate Data Scientist and ML Engineer currently pursuing my Bachelor's in Artificial Intelligence at Air University, Islamabad. With a strong foundation in machine learning, data analysis, and AI technologies, I specialize in creating intelligent solutions that drive business value.
+                    I'm a passionate about AI/ML and DataScience currently pursuing my Bachelor's in Artificial Intelligence at Air University, Islamabad. With a strong foundation in machine learning, data analysis, and AI technologies, I specialize in creating intelligent solutions that drive business value.
                   </p>
                   <p className="text-lg leading-relaxed text-slate-300">
                     My expertise spans across various domains including predictive modeling, computer vision, natural language processing, and business intelligence. I'm particularly interested in applying AI to solve real-world problems and creating automated systems that enhance productivity.
@@ -413,7 +413,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { title: "Programming", skills: resumeData.skills.programming, icon: Code, color: "from-cyan-400 to-blue-500" },
-              { title: "Data & ML", skills: resumeData.skills.data_ml, icon: Briefcase, color: "from-purple-400 to-pink-500" },
+              { title: "AI & ML", skills: resumeData.skills.data_ml, icon: Briefcase, color: "from-purple-400 to-pink-500" },
               { title: "Tools", skills: resumeData.skills.tools, icon: Award, color: "from-green-400 to-cyan-500" },
               { title: "Soft Skills", skills: resumeData.skills.soft_skills, icon: User, color: "from-yellow-400 to-orange-500" }
             ].map((cat, idx) => (
@@ -520,7 +520,7 @@ function App() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">Get In Touch</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full" />
             <p className="text-lg text-slate-300 mt-6 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about AI and data science.
+              I'm always open to discussing new opportunities, collaborations, or just having a chat about AI and Data.
             </p>
           </motion.div>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
